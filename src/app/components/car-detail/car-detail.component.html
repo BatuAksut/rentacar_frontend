@@ -1,0 +1,9 @@
+<div *ngIf="dataLoaded; else loading">
+  <h1>{{ carDetail?.carName }}</h1>
+  <p>Brand: {{ carDetail?.brandName }}</p>
+  <p>Color: {{ carDetail?.colorName }}</p>
+  <p>Price: {{ carDetail?.dailyPrice }}</p>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

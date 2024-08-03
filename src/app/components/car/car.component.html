@@ -13,12 +13,16 @@
       <th>Color</th>
       <th>Brand</th>
       <th>Price</th>
+      <th>Details</th> 
     </tr>
   </thead>
-  <tr *ngFor="let car of cars">
+  <tr *ngFor="let car of cars"  >
     <td>{{ car.carName }}</td>
     <td>{{ car.colorName }}</td>
     <td>{{ car.brandName }}</td>
     <td>{{ car.dailyPrice }}</td>
+    <td>
+      <button (click)="viewCarDetail(car.carId)">View Details</button>
+    </td>
   </tr>
 </table>
