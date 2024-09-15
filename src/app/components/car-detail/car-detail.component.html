@@ -1,9 +1,28 @@
 <div *ngIf="dataLoaded; else loading">
-  <h1>{{ carDetail?.carName }}</h1>
-  <p>Brand: {{ carDetail?.brandName }}</p>
-  <p>Color: {{ carDetail?.colorName }}</p>
-  <p>Price: {{ carDetail?.dailyPrice }}</p>
+  <h1>{{ carDetail.carName }}</h1>
+  <p>Brand: {{ carDetail.brandName }}</p>
+  <p>Id: {{carDetail.carId}} </p>
+  <p>Color: {{ carDetail.colorName }}</p>
+  <p>Price: {{ carDetail.dailyPrice }}</p>
+
+  <button (click)="navigateToRentalForm()">Kirala</button>
+
+
+  <!-- Check if images exist and have items -->
+  <div *ngIf="carDetail.images && carDetail.images.length > 0; else noImages">
+    <h3>Images:</h3>
+    <div *ngFor="let image of carDetail.images">
+      <img [src]="image" alt="Car Image" style="max-width: 100%; height: auto;" />
+    </div>
+  </div>
+
+  <!-- Template for no images -->
+  <ng-template #noImages>
+    <p>No images available.</p>
+  </ng-template>
 </div>
+
+<!-- Loading template -->
 <ng-template #loading>
   <p>Loading...</p>
 </ng-template>

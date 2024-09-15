@@ -5,6 +5,34 @@
 >
   <span class="visually-hidden">Loading...</span>
 </div>
+<!-- Başlangıç -->
+
+<div>
+  <label for="brandSelect">Marka Seçiniz:</label>
+  <select [(ngModel)]="selectedBrandId" id="brandSelect" class="form-select">
+    <option [value]="0">Tüm Markalar</option>
+    <option *ngFor="let brand of brands" [value]="brand.brandId">
+      {{ brand.brandName }}
+    </option>
+  </select>
+</div>
+
+<div>
+  <label for="colorSelect">Renk Seçiniz:</label>
+  <select [(ngModel)]="selectedColorId" id="colorSelect" class="form-select">
+    <option [value]="0">Tüm Renkler</option>
+    <option *ngFor="let color of colors" [value]="color.colorId">
+      {{ color.colorName }}
+    </option>
+  </select>
+</div>
+<button (click)="filterCars()" class="btn btn-primary mt-3">Filtrele</button>
+<!-- son -->
+ <hr>
+ <div class="mb-3">
+  <label for="combinedFilterText" class="form-label">Filtrele</label>
+  <input type="text" [(ngModel)]="combinedFilterText" class="form-control" id="combinedFilterText" placeholder="Model, Marka veya Renk girin">
+</div>
 
 <table *ngIf="dataLoaded == true" class="table">
   <thead>
@@ -16,7 +44,7 @@
       <th>Details</th> 
     </tr>
   </thead>
-  <tr *ngFor="let car of cars"  >
+  <tr *ngFor="let car of cars | filter:combinedFilterText" >
     <td>{{ car.carName }}</td>
     <td>{{ car.colorName }}</td>
     <td>{{ car.brandName }}</td>
@@ -26,3 +54,4 @@
     </td>
   </tr>
 </table>
+

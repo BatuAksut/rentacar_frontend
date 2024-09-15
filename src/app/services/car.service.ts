@@ -30,4 +30,8 @@ export class CarService {
   getCarDetailById(id: number): Observable<{ data: CarDetailDto, success: boolean, message: string | null }> {
     return this.httpClient.get<{ data: CarDetailDto, success: boolean, message: string | null }>(`${this.apiUrl}getcardetailbyid?id=${id}`);
   }
+
+  getCarDetailByIdWithImages(id: number): Observable<{ data: CarDetailDto, success: boolean, message: string | null }> {
+    return this.httpClient.get<{ data: CarDetailDto, success: boolean, message: string | null }>(`${this.apiUrl}getcardetailbyidwithimages?id=${id}`);
+  }
 }

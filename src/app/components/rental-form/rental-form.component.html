@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="carId">Car ID</label>
+      <input id="carId" [(ngModel)]="rental.carId" name="carId" type="number" placeholder="Car ID" />
+    </div>
+  
+    <div>
+      <label for="customerId">Customer ID</label>
+      <input id="customerId" [(ngModel)]="rental.customerId" name="customerId" type="number" placeholder="Customer ID" />
+    </div>
+  
+    <div>
+      <label for="rentDate">Rent Date</label>
+      <input id="rentDate" [(ngModel)]="rental.rentDate" name="rentDate" type="date" />
+    </div>
+  
+    <div>
+      <label for="returnDate">Return Date</label>
+      <input id="returnDate" [(ngModel)]="rental.returnDate" name="returnDate" type="date" />
+    </div>
+  
+    <div>
+      <label for="creditCardInfo">Credit Card Info</label>
+      <input id="creditCardInfo" [(ngModel)]="creditCardInfo" name="creditCardInfo" type="text" placeholder="Credit Card" />
+    </div>
+  
+    <button type="submit">Check Availability</button>
+  </form>
+  
