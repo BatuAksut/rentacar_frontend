@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { CarComponent } from './components/car/car.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { RentalFormComponent } from './components/rental-form/rental-form.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 export const routes: Routes = [
     {
@@ -14,6 +15,7 @@ export const routes: Routes = [
       { path: 'cars/color/:colorId', component: CarComponent },
       { path: 'car-detail/:id', component: CarDetailComponent },
       {path: 'rental-form', component: RentalFormComponent},
+      { path: 'payment', component: PaymentComponent }
       
       
       

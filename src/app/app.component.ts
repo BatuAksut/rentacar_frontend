@@ -7,11 +7,12 @@ import { NaviComponent } from './components/navi/navi.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ColorComponent } from './components/color/color.component';
 import { RentalComponent } from './components/rental/rental.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CarComponent,BrandComponent,NaviComponent,CommonModule,HttpClientModule,ColorComponent,RentalComponent],
+  imports: [RouterOutlet,CarComponent,BrandComponent,NaviComponent,CommonModule,HttpClientModule,ColorComponent,RentalComponent,ToastrModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
