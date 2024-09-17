@@ -1,14 +1,18 @@
 <ul class="list-group">
-    <li [ngClass]="getAllColorClass()" (click)="clearCurrentColor()" routerLink="/cars">Tüm Ürünler</li>
-    <li
-      (click)="setCurrentColor(color)"
-      routerLink="/cars/color/{{ color.colorId }}"
-      *ngFor="let color of colors"
-      [ngClass]="getCurrentColorClass(color)"
+  <li [ngClass]="getAllColorClass()" (click)="clearCurrentColor()" routerLink="/cars">Renkler</li>
+  <li
+    *ngFor="let color of colors"
+    [ngClass]="getCurrentColorClass(color)"
+    class="list-group-item d-flex justify-content-between align-items-center"
+  >
+    {{ color.colorName }}
+    <button
+      (click)="navigateUpdateColor(color)"
+      class="btn btn-warning btn-sm"
     >
-      {{ color.colorName }}
-    </li>
-  </ul>
-  
-  <h5 *ngIf="currentColor">{{ currentColor.colorName }} seçtiniz</h5>
-  
+      Güncelle
+    </button>
+  </li>
+</ul>
+
+<h5 *ngIf="currentColor">{{ currentColor.colorName }} seçtiniz</h5>

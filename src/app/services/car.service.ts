@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
 import { CarDetailDto } from '../models/carDetailDto';
+import { Car } from '../models/car';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +33,24 @@ export class CarService {
     return this.httpClient.get<{ data: CarDetailDto, success: boolean, message: string | null }>(`${this.apiUrl}getcardetailbyid?id=${id}`);
   }
 
+  getCarById(id: number): Observable<{ data: Car, success: boolean, message: string | null }> {
+    return this.httpClient.get<{ data: Car, success: boolean, message: string | null }>(`${this.apiUrl}getbyid?id=${id}`);
+  }
   getCarDetailByIdWithImages(id: number): Observable<{ data: CarDetailDto, success: boolean, message: string | null }> {
     return this.httpClient.get<{ data: CarDetailDto, success: boolean, message: string | null }>(`${this.apiUrl}getcardetailbyidwithimages?id=${id}`);
+  }
+
+  add(car:Car):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"add",car)
+  }
+
+  // Güncelleme metodu
+  update(car: Car): Observable<ResponseModel> {
+    return this.httpClient.put<ResponseModel>(`${this.apiUrl}update`, car);
+  }
+
+  // Silme metodu
+  delete(carId: number): Observable<ResponseModel> {
+    return this.httpClient.delete<ResponseModel>(`${this.apiUrl}delete?id=${carId}`);
   }
 }

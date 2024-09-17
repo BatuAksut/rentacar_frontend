@@ -1,13 +1,14 @@
-
 <ul class="list-group">
-  <li [ngClass]="getAllBrandClass()"  (click)="clearCurrentBrand()" routerLink="/cars"> Tüm Ürünler</li>
+  <li [ngClass]="getAllBrandClass()" (click)="clearCurrentBrand()" routerLink="/cars"> Markalar</li>
   <li
     (click)="setCurrentBrand(brand)"
-    routerLink="/cars/brand/{{ brand.brandId }}"
     *ngFor="let brand of brands"
     [ngClass]="getCurrentBrandClass(brand)"
+    class="d-flex justify-content-between align-items-center"
   >
     {{ brand.brandName }}
+    <!-- Güncelleme Butonu -->
+    <button class="btn btn-warning btn-sm" (click)="navigateToUpdateBrand(brand)">Güncelle</button> 
   </li>
 </ul>
 

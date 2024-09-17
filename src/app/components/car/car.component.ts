@@ -61,6 +61,12 @@ export class CarComponent {
     });
   }
 
+  // car.component.ts
+
+  updateCar(carId: number) {
+    this.router.navigate(['/cars/update', carId]);
+  }
+
   // Renkleri yükleyen metot
   getColors() {
     this.colorService.getColors().subscribe((response) => {
@@ -68,7 +74,6 @@ export class CarComponent {
     });
   }
 
-  
   filterCars() {
     if (this.selectedBrandId > 0 && this.selectedColorId > 0) {
       // İki ayrı API çağrısını aynı anda yap

@@ -1,0 +1,18 @@
+<!-- update-car.component.html -->
+
+<div *ngIf="car">
+    <h2>Update Car</h2>
+    <form (ngSubmit)="updateCar()">
+      <div>
+        <label for="carName">Name:</label>
+        <input [(ngModel)]="car.carName" name="carName" id="carName" required>
+      </div>
+      <div>
+        <label for="carPrice">Price:</label>
+        <input [(ngModel)]="car.dailyPrice" name="carPrice" id="carPrice" required>
+      </div>
+      <!-- Diğer form alanları -->
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  

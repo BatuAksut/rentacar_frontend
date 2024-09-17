@@ -1,0 +1,22 @@
+<div class="container">
+    <h3>Renk Güncelleme</h3>
+    <form [formGroup]="colorUpdateForm" (ngSubmit)="updateColor()">
+      <div class="mb-3">
+        <label for="colorName" class="form-label">Renk Adı</label>
+        <input
+          id="colorName"
+          type="text"
+          formControlName="colorName"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': colorUpdateForm.controls['colorName'].invalid && colorUpdateForm.controls['colorName'].touched }"
+        />
+        <div *ngIf="colorUpdateForm.controls['colorName'].invalid && colorUpdateForm.controls['colorName'].touched" class="invalid-feedback">
+          Renk adı zorunludur.
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-success" [disabled]="colorUpdateForm.invalid">Güncelle</button>
+      <button type="button" class="btn btn-secondary" (click)="router.navigate(['/cars'])">İptal</button>
+    </form>
+  </div>
+  

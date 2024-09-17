@@ -42,16 +42,20 @@
       <th>Brand</th>
       <th>Price</th>
       <th>Details</th> 
+      <th>Update</th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars | filter:combinedFilterText" >
+  <tr *ngFor="let car of cars | filter:combinedFilterText">
     <td>{{ car.carName }}</td>
     <td>{{ car.colorName }}</td>
     <td>{{ car.brandName }}</td>
     <td>{{ car.dailyPrice }}</td>
     <td>
-      <button (click)="viewCarDetail(car.carId)">View Details</button>
+      <button class="btn btn-success" (click)="viewCarDetail(car.carId)">View Details</button>
+    </td>
+    <td>
+      <button class="btn btn-success" (click)="updateCar(car.carId)">Update Car</button>
+
     </td>
   </tr>
 </table>
-

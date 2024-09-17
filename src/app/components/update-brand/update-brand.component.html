@@ -1,0 +1,11 @@
+<div *ngIf="dataLoaded && brand">
+    <h3>Marka Güncelle</h3>
+    <form (ngSubmit)="updateBrand()">
+      <div class="form-group">
+        <label for="brandName">Marka Adı</label>
+        <input [(ngModel)]="brand.brandName" id="brandName" class="form-control" name="brandName" required />
+      </div>
+      <button type="submit" class="btn btn-success">Güncelle</button>
+    </form>
+  </div>
+  

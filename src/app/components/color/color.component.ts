@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { Color } from '../../models/color';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-color',
@@ -17,7 +18,7 @@ export class ColorComponent {
   dataLoaded = false;
   currentColor: Color | null = null;
 
-  constructor(private colorService: ColorService) {}
+  constructor(private colorService: ColorService,private router:Router) {}
 
   ngOnInit(): void {
     this.getColors();
@@ -44,5 +45,9 @@ export class ColorComponent {
 
   clearCurrentColor() {
     this.currentColor = null;
+  }
+
+  navigateUpdateColor(color:Color) {
+    this.router.navigate(['/colors/update', color.colorId]);
   }
 }
