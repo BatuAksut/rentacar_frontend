@@ -10,6 +10,8 @@ import { UpdateBrandComponent } from './components/update-brand/update-brand.com
 import { UpdateCarComponent } from './components/update-car/update-car.component';
 import { UpdateColorComponent } from './components/update-color/update-color.component';
 import { ColorComponent } from './components/color/color.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
     {
@@ -30,6 +32,8 @@ export const routes: Routes = [
       { path: 'cars/update/:carId', component: UpdateCarComponent },
       { path: 'colors/update/:colorId', component: UpdateColorComponent },
       { path: 'update-color/:id', component: UpdateColorComponent },
+      {path:'login',component:LoginComponent},
+      {path:'register',component:RegisterComponent},
 
       
       

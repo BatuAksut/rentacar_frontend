@@ -1,0 +1,29 @@
+<main class="form-signin w-100 m-auto">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <h1 class="h3 mb-3 fw-normal">Kayıt Ol</h1>
+  
+      <div class="form-floating">
+        <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+        <label for="floatingInput">E-posta</label>
+      </div>
+  
+      <div class="form-floating">
+        <input formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+        <label for="floatingPassword">Parola</label>
+      </div>
+  
+      <div class="form-floating">
+        <input formControlName="firstName" type="text" class="form-control" id="floatingFirstName" placeholder="Ad" />
+        <label for="floatingFirstName">Ad</label>
+      </div>
+  
+      <div class="form-floating">
+        <input formControlName="lastName" type="text" class="form-control" id="floatingLastName" placeholder="Soyad" />
+        <label for="floatingLastName">Soyad</label>
+      </div>
+  
+      <button type="submit" class="btn btn-primary w-100 py-2">Kayıt Ol</button>
+      <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+    </form>
+  </main>
+  
