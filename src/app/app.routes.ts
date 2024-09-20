@@ -12,6 +12,7 @@ import { UpdateColorComponent } from './components/update-color/update-color.com
 import { ColorComponent } from './components/color/color.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 export const routes: Routes = [
     {
@@ -34,6 +35,7 @@ export const routes: Routes = [
       { path: 'update-color/:id', component: UpdateColorComponent },
       {path:'login',component:LoginComponent},
       {path:'register',component:RegisterComponent},
+      { path: 'profile', component: ProfileComponent },
 
       
       

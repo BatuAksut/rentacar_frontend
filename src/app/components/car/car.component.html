@@ -8,9 +8,9 @@
 <!-- Başlangıç -->
 
 <div>
-  <label for="brandSelect">Marka Seçiniz:</label>
+  <label for="brandSelect">Choose Brand:</label>
   <select [(ngModel)]="selectedBrandId" id="brandSelect" class="form-select">
-    <option [value]="0">Tüm Markalar</option>
+    <option [value]="0">All Brands</option>
     <option *ngFor="let brand of brands" [value]="brand.brandId">
       {{ brand.brandName }}
     </option>
@@ -18,20 +18,20 @@
 </div>
 
 <div>
-  <label for="colorSelect">Renk Seçiniz:</label>
+  <label for="colorSelect">Choose Color:</label>
   <select [(ngModel)]="selectedColorId" id="colorSelect" class="form-select">
-    <option [value]="0">Tüm Renkler</option>
+    <option [value]="0">All Colors</option>
     <option *ngFor="let color of colors" [value]="color.colorId">
       {{ color.colorName }}
     </option>
   </select>
 </div>
-<button (click)="filterCars()" class="btn btn-primary mt-3">Filtrele</button>
+<button (click)="filterCars()" class="btn btn-primary mt-3">Filter</button>
 <!-- son -->
  <hr>
  <div class="mb-3">
-  <label for="combinedFilterText" class="form-label">Filtrele</label>
-  <input type="text" [(ngModel)]="combinedFilterText" class="form-control" id="combinedFilterText" placeholder="Model, Marka veya Renk girin">
+  <label for="combinedFilterText" class="form-label">Search</label>
+  <input type="text" [(ngModel)]="combinedFilterText" class="form-control" id="combinedFilterText" placeholder="Enter Model,Brand or Color">
 </div>
 
 <table *ngIf="dataLoaded == true" class="table">

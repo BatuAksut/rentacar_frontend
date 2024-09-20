@@ -1,17 +1,17 @@
 <div class="container">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header"><h5 class="title">Ürün ekle</h5></div>
+        <div class="card-header"><h5 class="title">Add Color</h5></div>
         <div class="card-body">
           <form [formGroup]="colorAddForm">
-            <div class="mb-3"><label for="colorName">Ürün Adı</label>
+            <div class="mb-3"><label for="colorName">Color Name</label>
               <div class="form-group">
-                  <input type="text" id="colorName" formControlName="colorName" class="form-control" placeholder="Ürün adı">
+                  <input type="text" id="colorName" formControlName="colorName" class="form-control" placeholder="Enter Color Name">
               </div></div>
 
           </form>
       </div>
-      <div class="card-footer"><button class="btn btn-fill btn-primary" (click)="add()">Ekle</button></div>
+      <div class="card-footer"><button class="btn btn-fill btn-primary" (click)="add()">Add</button></div>
       </div>
     </div>
   </div>

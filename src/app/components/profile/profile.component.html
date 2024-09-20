@@ -1,0 +1,20 @@
+<main class="form-signin w-100 m-auto">
+    <form (ngSubmit)="updateUser()" *ngIf="user">
+        <h1 class="h3 mb-3 fw-normal">Profilim</h1>
+  
+        <div class="form-floating">
+            <input formControlName="firstName" [(ngModel)]="user.firstName" class="form-control" id="firstName" placeholder="İsim">
+            <label for="firstName">İsim</label>
+        </div>
+  
+        <div class="form-floating">
+            <input formControlName="lastName" [(ngModel)]="user.lastName" class="form-control" id="lastName" placeholder="Soyisim">
+            <label for="lastName">Soyisim</label>
+        </div>
+  
+        <button type="submit" class="btn btn-primary w-100 py-2">Güncelle</button>
+    </form>
+    <div *ngIf="!user">
+        <p>Yükleniyor...</p> <!-- Kullanıcı verileri yüklenirken gösterilecek mesaj -->
+    </div>
+</main>

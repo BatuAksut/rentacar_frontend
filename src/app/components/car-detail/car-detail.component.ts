@@ -11,30 +11,31 @@ import { RentalService } from '../../services/rental.service';
   templateUrl: './car-detail.component.html',
   standalone: true,
   imports: [CommonModule, HttpClientModule],
-  styleUrls: ['./car-detail.component.css']
+  styleUrls: ['./car-detail.component.css'],
 })
 export class CarDetailComponent implements OnInit {
   carDetail: CarDetailDto = {
     carId: 0,
-    brandId:0,
-    colorId:0,
+    brandId: 0,
+    colorId: 0,
     carName: '',
     brandName: '',
     dailyPrice: 0,
     colorName: '',
-    images: []
-  }; 
+    images: [],
+    minFindeksScore: 0, // Minimum Findeks puanı bilgisi eklendi
+  };
   dataLoaded: boolean = false;
 
   constructor(
     private carService: CarService,
     private route: ActivatedRoute,
-    private rentalService:RentalService,
+    private rentalService: RentalService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       const carId = Number(params['id']);
       if (!isNaN(carId)) {
         this.getCarDetailById(carId);
@@ -43,12 +44,11 @@ export class CarDetailComponent implements OnInit {
         this.dataLoaded = true;
       }
     });
-    
   }
-  
+
   getCarDetailById(id: number): void {
     this.carService.getCarDetailByIdWithImages(id).subscribe(
-      response => {
+      (response) => {
         if (response.success) {
           this.carDetail = response.data;
         } else {
@@ -56,13 +56,14 @@ export class CarDetailComponent implements OnInit {
         }
         this.dataLoaded = true;
       },
-      error => {
+      (error) => {
         console.error('Error fetching car details:', error);
         this.dataLoaded = true;
       }
     );
   }
+
   navigateToRentalForm() {
-    this.router.navigate(['/rental-form']);
+    this.router.navigate(['/rental-form'], { queryParams: { minFindeksScore: this.carDetail.minFindeksScore } });
   }
 }

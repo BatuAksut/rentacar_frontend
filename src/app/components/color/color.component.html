@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li [ngClass]="getAllColorClass()" (click)="clearCurrentColor()" routerLink="/cars">Renkler</li>
+  <li [ngClass]="getAllColorClass()" (click)="clearCurrentColor()" routerLink="/cars">Colors</li>
   <li
     *ngFor="let color of colors"
     [ngClass]="getCurrentColorClass(color)"
@@ -10,9 +10,9 @@
       (click)="navigateUpdateColor(color)"
       class="btn btn-warning btn-sm"
     >
-      Güncelle
+      Update
     </button>
   </li>
 </ul>
 
-<h5 *ngIf="currentColor">{{ currentColor.colorName }} seçtiniz</h5>
+<h5 *ngIf="currentColor">{{ currentColor.colorName }} selected</h5>

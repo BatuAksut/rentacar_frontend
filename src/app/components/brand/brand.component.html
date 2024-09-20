@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li [ngClass]="getAllBrandClass()" (click)="clearCurrentBrand()" routerLink="/cars"> Markalar</li>
+  <li [ngClass]="getAllBrandClass()" (click)="clearCurrentBrand()" routerLink="/cars"> Brands</li>
   <li
     (click)="setCurrentBrand(brand)"
     *ngFor="let brand of brands"
@@ -8,8 +8,8 @@
   >
     {{ brand.brandName }}
     <!-- Güncelleme Butonu -->
-    <button class="btn btn-warning btn-sm" (click)="navigateToUpdateBrand(brand)">Güncelle</button> 
+    <button class="btn btn-warning btn-sm" (click)="navigateToUpdateBrand(brand)">Update</button> 
   </li>
 </ul>
 
-<h5 *ngIf="currentBrand">{{ currentBrand.brandName }} seçtiniz</h5>
+<h5 *ngIf="currentBrand">{{ currentBrand.brandName }} selected</h5>
