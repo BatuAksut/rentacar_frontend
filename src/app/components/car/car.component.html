@@ -45,7 +45,7 @@
       <th>Update</th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars | filter:combinedFilterText">
+  <tr *ngFor="let car of cars | filter:combinedFilterText" appCarHighlight>
     <td>{{ car.carName }}</td>
     <td>{{ car.colorName }}</td>
     <td>{{ car.brandName }}</td>
@@ -55,7 +55,7 @@
     </td>
     <td>
       <button class="btn btn-success" (click)="updateCar(car.carId)">Update Car</button>
-
     </td>
   </tr>
+  
 </table>

@@ -11,11 +11,12 @@ import { Color } from '../../models/color';
 import { BrandService } from '../../services/brand.service';
 import { ColorService } from '../../services/color.service';
 import { forkJoin } from 'rxjs';
+import { CarHighlightDirective } from '../../directives/car-highlight.directive';
 
 @Component({
   selector: 'app-car',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule, FilterPipe],
+  imports: [CommonModule, HttpClientModule, FormsModule, FilterPipe,CarHighlightDirective],
   templateUrl: './car.component.html',
   styleUrl: './car.component.css',
 })
